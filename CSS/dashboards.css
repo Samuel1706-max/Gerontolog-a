@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+}
+.navbar {
+    background: #343a40;
+}
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #343a40;
+    color: white;
+    padding: 20px;
+    position: fixed;
+}
+.main {
+    margin-left: 260px;
+    padding: 20px;
+}
+.card {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
