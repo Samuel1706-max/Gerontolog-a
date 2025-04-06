@@ -9,6 +9,24 @@
     <link rel="stylesheet" href="CSS/dashboards.css">
 </head>
 <body>
+    <script>
+        // Verificar si el usuario está logueado
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('userLoggedIn');
+            
+            if (!isLoggedIn || isLoggedIn !== 'true') {
+                // Si no está logueado, redirigir al login
+                window.location.href = 'login.html';
+            }
+        });
+        
+        // Función para cerrar sesión
+        function logout() {
+            localStorage.removeItem('userLoggedIn');
+            localStorage.removeItem('userEmail');
+            window.location.href = 'index.html';
+        }
+    </script>
     <div class="sidebar">
         <h4 class="text-center text-light">Centro Geriátrico</h4>
         <a href="#">Pacientes</a>
@@ -19,15 +37,33 @@
         <a href="#">Monitoreo de Salud</a>
         <a href="#">Reportes</a>
         <a href="#">Configuración</a>
+        <a href="#" onclick="logout()" class="mt-auto">Cerrar Sesión</a>
     </div>
 
     <div class="content">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2>Dashboard</h2>
-            <div>
-                <input type="date" id="fechaFiltro" class="form-control d-inline" style="width: auto;">
-                <button class="btn btn-primary" onclick="actualizarDashboard()">Filtrar</button>
+            <!-- En Dashboards.html, después del h2 "Dashboard" -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                    <p id="welcomeMessage">Bienvenido/a</p>
+                </div>
+                <div>
+                    <input type="date" id="fechaFiltro" class="form-control d-inline" style="width: auto;">
+                    <button class="btn btn-primary" onclick="actualizarDashboard()">Filtrar</button>
+                </div>
             </div>
+
+            <script>
+                // Agregar esto al script existente
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Mostrar mensaje de bienvenida personalizado
+                    const userEmail = localStorage.getItem('userEmail');
+                    if (userEmail) {
+                        document.getElementById('welcomeMessage').textContent = `Bienvenido/a, ${userEmail}`;
+                    }
+                });
+            </script>
         </div>
         
         <div class="row">
