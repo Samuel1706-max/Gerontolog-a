@@ -11,7 +11,16 @@ body {
 }
 
 .seccion-especialidades {
-    width: 100%; 
-    background-color: #ffffff; 
-    padding: 50px 0; /
+    width: 100%;
+    background-color: #dadada;
+    padding: 50px 0;
+}
+
+.card-img-top {
+    height: 200px; /* Ajusta según el diseño que desees */
+    object-fit: cover;
+}
+
+.card-text {
+    text-align: justify;
 }

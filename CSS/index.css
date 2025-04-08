@@ -40,6 +40,11 @@
   background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad para mayor efecto */
 }
 
+.justificado {
+  text-align: justify;
+}
+
+
 
 
 
